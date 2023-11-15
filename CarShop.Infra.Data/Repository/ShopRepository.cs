@@ -1,13 +1,21 @@
 ﻿using CarShop.Domain.Interfaces;
 using CarShop.Domain.Models;
+using CarShop.Infra.Data.Context;
 
 namespace CarShop.Infra.Data.Repository;
 
 public class ShopRepository:IShopRepository
 {
+    private readonly ShopContext _context;
+
+    public ShopRepository(ShopContext context)
+    {
+        _context = context;
+    }
     public bool CreateCategory(CreateCarCategory command)
     {
-        throw new NotImplementedException();
+        var newCategory = new CarCategory(command.Name);
+        return !string.IsNullOrWhiteSpace(newCategory.CategoryName);
     }
 
     public bool EditCarCategory(EditCarCategory command)
