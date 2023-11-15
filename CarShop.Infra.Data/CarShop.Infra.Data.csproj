@@ -8,7 +8,10 @@
 
   <ItemGroup>
     <Folder Include="Context\" />
-    <Folder Include="Repository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarShop.Domain\CarShop.Domain.csproj" />
   </ItemGroup>
 
 </Project>
