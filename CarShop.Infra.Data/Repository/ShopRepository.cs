@@ -4,14 +4,10 @@ using CarShop.Infra.Data.Context;
 
 namespace CarShop.Infra.Data.Repository;
 
-public class ShopRepository:IShopRepository
+public class ShopRepository(ShopContext context) : IShopRepository
 {
-    private readonly ShopContext _context;
+    private readonly ShopContext _context = context;
 
-    public ShopRepository(ShopContext context)
-    {
-        _context = context;
-    }
     public bool CreateCategory(CreateCarCategory command)
     {
         var newCategory = new CarCategory(command.Name);
@@ -24,7 +20,7 @@ public class ShopRepository:IShopRepository
     public bool EditCarCategory(EditCarCategory command)
     {
         var category = _context.Categories.FirstOrDefault(x=>x.Id == command.Id);
-        category.CategoryName = command.Name;
+        category.Edit(command.Name);
         SaveChanges();
         //checks if newCategory be notnull, returns true
         return !string.IsNullOrWhiteSpace(category.CategoryName);

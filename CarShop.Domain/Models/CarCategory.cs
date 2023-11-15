@@ -6,10 +6,9 @@
         public string CategoryName { get; set; } = categoryName;
         public DateTime DateCreated { get; set; } = DateTime.Now;
 
-        public void Edit(string categoryName, DateTime dateCreated)
+        public void Edit(string categoryName)
         {
             CategoryName = categoryName;
-            DateCreated = DateTime.Now;
         }
     }
 }
