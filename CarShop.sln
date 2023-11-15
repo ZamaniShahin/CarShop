@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop.Domain", "CarShop.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop.Application", "CarShop.Application\CarShop.Application.csproj", "{995D06FB-5571-42E6-82A2-6C33C1A28176}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop.Infra.Data", "CarShop.Infra.Data\CarShop.Infra.Data.csproj", "{86ECB1F4-F814-4AB3-88B1-9988D56DE3FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{995D06FB-5571-42E6-82A2-6C33C1A28176}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{995D06FB-5571-42E6-82A2-6C33C1A28176}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{995D06FB-5571-42E6-82A2-6C33C1A28176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86ECB1F4-F814-4AB3-88B1-9988D56DE3FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86ECB1F4-F814-4AB3-88B1-9988D56DE3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86ECB1F4-F814-4AB3-88B1-9988D56DE3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86ECB1F4-F814-4AB3-88B1-9988D56DE3FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C3C001B1-24DD-48D9-B780-002AD9CD3B28} = {39506B51-F625-4165-ADAF-6BB21830B0D3}
 		{995D06FB-5571-42E6-82A2-6C33C1A28176} = {96256EC0-49EB-4467-8838-9AF27DFFB738}
+		{86ECB1F4-F814-4AB3-88B1-9988D56DE3FC} = {039CD6D6-0F1C-4204-94BA-F61A3ED66D50}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B8EA74E-DDBA-4682-BCB7-E2A3447D5244}
