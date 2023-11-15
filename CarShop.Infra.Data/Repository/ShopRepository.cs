@@ -30,23 +30,25 @@ public class ShopRepository:IShopRepository
         return !string.IsNullOrWhiteSpace(category.CategoryName);
     }
 
-    public bool DeleteCarCategory(long id)
+    public void DeleteCarCategory(long id)
     {
-        throw new NotImplementedException();
+        var category = _context.Categories.FirstOrDefault(x => x.Id == id);
+        _context.Categories.Remove(category);
+        SaveChanges();
     }
 
     public CarCategory GetCategory(long id)
     {
-        throw new NotImplementedException();
+        return _context.Categories.FirstOrDefault(c => c.Id == id);
     }
 
     public List<CarCategory> GetAllCategories()
     {
-        throw new NotImplementedException();
+        return _context.Categories.ToList();
     }
 
     public void SaveChanges()
     {
-        throw new NotImplementedException();
+        _context.SaveChanges();
     }
 }
