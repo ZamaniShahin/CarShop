@@ -15,27 +15,26 @@ public class ShopService:IShopService
     //returns true, If Creating Category Be Succeeded
     public bool CreateCategory(CreateCarCategory command)
     {
-        var newCategory = new CarCategory(command.Name);
-        return !string.IsNullOrWhiteSpace(newCategory.CategoryName);
+        return _shopRepository.CreateCategory(command);
     }
 
     public bool EditCarCategory(EditCarCategory command)
     {
-        throw new NotImplementedException();
+        return _shopRepository.EditCarCategory(command);
     }
 
     public bool DeleteCarCategory(long id)
     {
-        throw new NotImplementedException();
+        return _shopRepository.DeleteCarCategory(id);
     }
 
     public CarCategory GetCategory(long id)
     {
-        throw new NotImplementedException();
+        return _shopRepository.GetCategory(id);
     }
 
     public List<CarCategory> GetAllCategories()
     {
-        throw new NotImplementedException();
+        return _shopRepository.GetAllCategories();
     }
 }
