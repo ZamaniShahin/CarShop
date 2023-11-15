@@ -15,12 +15,19 @@ public class ShopRepository:IShopRepository
     public bool CreateCategory(CreateCarCategory command)
     {
         var newCategory = new CarCategory(command.Name);
+        _context.Categories.Add(newCategory);
+        SaveChanges();
+        //checks if newCategory be notnull, returns true
         return !string.IsNullOrWhiteSpace(newCategory.CategoryName);
     }
 
     public bool EditCarCategory(EditCarCategory command)
     {
-        throw new NotImplementedException();
+        var category = _context.Categories.FirstOrDefault(x=>x.Id == command.Id);
+        category.CategoryName = command.Name;
+        SaveChanges();
+        //checks if newCategory be notnull, returns true
+        return !string.IsNullOrWhiteSpace(category.CategoryName);
     }
 
     public bool DeleteCarCategory(long id)
@@ -34,6 +41,11 @@ public class ShopRepository:IShopRepository
     }
 
     public List<CarCategory> GetAllCategories()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SaveChanges()
     {
         throw new NotImplementedException();
     }

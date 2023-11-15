@@ -9,5 +9,6 @@ namespace CarShop.Domain.Interfaces
         public bool DeleteCarCategory(long id);
         public CarCategory GetCategory(long id);
         public List<CarCategory> GetAllCategories();
+        public void SaveChanges();
     }
 }
