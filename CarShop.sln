@@ -3,9 +3,34 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarShop.Domain", "CarShop.Domain", "{39506B51-F625-4165-ADAF-6BB21830B0D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarShop.Application", "CarShop.Application", "{96256EC0-49EB-4467-8838-9AF27DFFB738}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarShop.Infrastructure.Data", "CarShop.Infrastructure.Data", "{039CD6D6-0F1C-4204-94BA-F61A3ED66D50}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CarShop.Infrastructure.IoC", "CarShop.Infrastructure.IoC", "{7D296153-1E38-4C01-B2CC-53D03B55D940}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{BE24103F-27B3-4840-ABA0-12EEA9836D21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop.Domain", "CarShop.Domain\CarShop.Domain.csproj", "{C3C001B1-24DD-48D9-B780-002AD9CD3B28}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3C001B1-24DD-48D9-B780-002AD9CD3B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3C001B1-24DD-48D9-B780-002AD9CD3B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3C001B1-24DD-48D9-B780-002AD9CD3B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3C001B1-24DD-48D9-B780-002AD9CD3B28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C3C001B1-24DD-48D9-B780-002AD9CD3B28} = {39506B51-F625-4165-ADAF-6BB21830B0D3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B8EA74E-DDBA-4682-BCB7-E2A3447D5244}
