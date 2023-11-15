@@ -12,9 +12,11 @@ public class ShopService:IShopService
     {
         _shopRepository = shopRepository;
     }
+    //returns true, If Creating Category Be Succeeded
     public bool CreateCategory(CreateCarCategory command)
     {
-        throw new NotImplementedException();
+        var newCategory = new CarCategory(command.Name);
+        return !string.IsNullOrWhiteSpace(newCategory.CategoryName);
     }
 
     public bool EditCarCategory(EditCarCategory command)
