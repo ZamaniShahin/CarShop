@@ -9,10 +9,11 @@ namespace ServiceHost.Controllers
     public class ShopController : ControllerBase
     {
         private readonly ICarCategoryRepository _carCategoryRepository;
-
-        public ShopController(ICarCategoryRepository carCategoryRepository)
+        private readonly ICarRepository _carRepository;
+        public ShopController(ICarCategoryRepository carCategoryRepository, ICarRepository carRepository)
         {
             _carCategoryRepository = carCategoryRepository;
+            _carRepository = carRepository;
         }
 
         [HttpGet(Name = "GetIndex")]
