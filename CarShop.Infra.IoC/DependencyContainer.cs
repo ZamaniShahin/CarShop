@@ -11,7 +11,7 @@ namespace CarShop.Infra.IoC
 {
     public static class DependencyContainer
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+        public static void AddInfrastructure(this IServiceCollection services)
         {
             // Application Layer
             services.AddScoped<IShopService, ShopService>();
@@ -25,7 +25,6 @@ namespace CarShop.Infra.IoC
                 options.UseSqlServer(configuration.GetConnectionString("CarShopDbConnection"));
             });
 
-            return services;
         }
     }
 }

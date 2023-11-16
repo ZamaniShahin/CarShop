@@ -11,7 +11,7 @@ public class ShopRepository(ShopContext context) : IShopRepository
     public bool CreateCategory(CreateCarCategory command)
     {
         var newCategory = new CarCategory(command.Name);
-        _context.Categories.Add(newCategory);
+        _context.CarCategories.Add(newCategory);
         SaveChanges();
         //checks if newCategory be notnull, returns true
         return !string.IsNullOrWhiteSpace(newCategory.CategoryName);
@@ -19,7 +19,7 @@ public class ShopRepository(ShopContext context) : IShopRepository
 
     public bool EditCarCategory(EditCarCategory command)
     {
-        var category = _context.Categories.FirstOrDefault(x=>x.Id == command.Id);
+        var category = _context.CarCategories.FirstOrDefault(x=>x.Id == command.Id);
         category.Edit(command.Name);
         SaveChanges();
         //checks if newCategory be notnull, returns true
@@ -28,19 +28,19 @@ public class ShopRepository(ShopContext context) : IShopRepository
 
     public void DeleteCarCategory(long id)
     {
-        var category = _context.Categories.FirstOrDefault(x => x.Id == id);
-        _context.Categories.Remove(category);
+        var category = _context.CarCategories.FirstOrDefault(x => x.Id == id);
+        _context.CarCategories.Remove(category);
         SaveChanges();
     }
 
     public CarCategory GetCategory(long id)
     {
-        return _context.Categories.FirstOrDefault(c => c.Id == id);
+        return _context.CarCategories.FirstOrDefault(c => c.Id == id);
     }
 
     public List<CarCategory> GetAllCategories()
     {
-        return _context.Categories.ToList();
+        return _context.CarCategories.ToList();
     }
 
     public void SaveChanges()
