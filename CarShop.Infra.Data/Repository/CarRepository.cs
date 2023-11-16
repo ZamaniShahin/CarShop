@@ -17,10 +17,10 @@ public class CarRepository(ShopContext context) : ICarRepository
         return !string.IsNullOrWhiteSpace(newCar.CarName);
     }
 
-    public bool EditCarCategory(EditCarCategory command)
+    public bool EditCar(EditCar command)
     {
-        var category = _context.CarCategories.FirstOrDefault(x => x.Id == command.Id);
-        category.Edit(command.Name);
+        var car = _context.Cars.FirstOrDefault(x => x.CarId == command.CarId);
+        car.Edit(command.CarName);
         SaveChanges();
         //checks if newCategory be notnull, returns true
         return !string.IsNullOrWhiteSpace(category.CategoryName);
