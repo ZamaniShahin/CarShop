@@ -14,7 +14,7 @@ namespace CarShop.Infra.IoC
         public static void AddInfrastructure(this IServiceCollection services)
         {
             // Application Layer
-            services.AddScoped<IShopService, ShopService>();
+            services.AddScoped<ICarCategoryService, CarCategoryService>();
 
             //Infrastructure.Data Layer 
             services.AddScoped<ICarCategoryRepository, CarCategoryRepository>();

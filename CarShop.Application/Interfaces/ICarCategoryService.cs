@@ -2,7 +2,7 @@
 
 namespace CarShop.Application.Interfaces;
 
-public interface IShopService
+public interface ICarCategoryService
 {
     public bool CreateCategory(CreateCarCategory command);
     public bool EditCarCategory(EditCarCategory command);

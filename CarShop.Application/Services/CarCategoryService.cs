@@ -4,11 +4,11 @@ using CarShop.Domain.Models;
 
 namespace CarShop.Application.Services;
 
-public class ShopService:IShopService
+public class CarCategoryService:ICarCategoryService
 {
     private readonly ICarCategoryRepository _carCategoryRepository;
 
-    public ShopService(ICarCategoryRepository carCategoryRepository)
+    public CarCategoryService(ICarCategoryRepository carCategoryRepository)
     {
         _carCategoryRepository = carCategoryRepository;
     }
