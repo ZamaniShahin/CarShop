@@ -23,9 +23,9 @@ public class ShopService:IShopService
         return _shopRepository.EditCarCategory(command);
     }
 
-    public bool DeleteCarCategory(long id)
+    public void DeleteCarCategory(long id)
     {
-        return _shopRepository.DeleteCarCategory(id);
+        _shopRepository.DeleteCarCategory(id);
     }
 
     public CarCategory GetCategory(long id)

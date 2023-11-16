@@ -1,7 +1,31 @@
-﻿namespace CarShop.Infra.IoC
-{
-    public class DependencyContainer
-    {
+﻿using CarShop.Application.Interfaces;
+using CarShop.Application.Services;
+using CarShop.Domain.Interfaces;
+using CarShop.Infra.Data.Context;
+using CarShop.Infra.Data.Repository;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
+namespace CarShop.Infra.IoC
+{
+    public static class DependencyContainer
+    {
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+        {
+            // Application Layer
+            services.AddScoped<IShopService, ShopService>();
+
+            //Infrastructure.Data Layer 
+            services.AddScoped<IShopRepository, ShopRepository>();
+
+            IConfiguration configuration = services.BuildServiceProvider().GetService<IConfiguration>();
+            services.AddDbContext<ShopContext>(options =>
+            {
+                options.UseSqlServer(configuration.GetConnectionString("CarShopDbConnection"));
+            });
+
+            return services;
+        }
     }
 }
