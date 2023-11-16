@@ -1,3 +1,4 @@
+using CarShop.Application.ViewModels;
 using CarShop.Domain.Interfaces;
 using CarShop.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -17,9 +18,19 @@ namespace ServiceHost.Controllers
         }
 
         [HttpGet(Name = "GetIndex")]
-        public List<CarCategory> Get()
+        public List<CarCategoryDto> Get()
         {
-            var list = _carCategoryRepository.GetAllCategories();
+            var carCategories = _carCategoryRepository.GetAllCategories().Select(x => new CarCategoryDto
+            {
+                Name = x.CategoryName,
+                DateCreated = x.DateCreated.ToString()
+            }).ToList();
+            return carCategories;
+        }
+        [HttpGet(Name = "GetCarsIndex")]
+        public List<Car> GetCars()
+        {
+            var list = _carRepository.GetAllCars();
             return list;
         }
     }
