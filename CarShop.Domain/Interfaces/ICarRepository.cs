@@ -7,6 +7,6 @@ public interface ICarRepository
     public bool CreateCar(CreateCar command);
     public void EditCar(EditCar command);
     public void DeleteCar(long id);
-    public CarCategory GetCar(long id);
+    public Car GetCar(long id);
     public List<CarCategory> GetAllCars();
 }

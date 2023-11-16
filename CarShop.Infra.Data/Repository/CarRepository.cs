@@ -31,9 +31,9 @@ public class CarRepository(ShopContext context) : ICarRepository
         SaveChanges();
     }
 
-    public CarCategory GetCategory(long id)
+    public Car GetCar(long id)
     {
-        return _context.CarCategories.FirstOrDefault(c => c.Id == id);
+        return _context.Cars.FirstOrDefault(c => c.CarId == id);
     }
 
     public List<CarCategory> GetAllCategories()
