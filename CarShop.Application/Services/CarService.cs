@@ -15,26 +15,26 @@ public class CarService:ICarService
 
     public bool CreateCar(CreateCar command)
     {
-        throw new NotImplementedException();
+       return _carRepository.CreateCar(command);
     }
 
     public bool EditCar(EditCar command)
     {
-        throw new NotImplementedException();
+        return _carRepository.EditCar(command);
     }
 
     public void DeleteCar(long id)
     {
-        throw new NotImplementedException();
+        _carRepository.DeleteCar(id);
     }
 
     public CarCategory GetCar(long id)
     {
-        throw new NotImplementedException();
+        return _carRepository.GetCar(id);
     }
 
     public List<CarCategory> GetAllCars()
     {
-        throw new NotImplementedException();
+        return _carRepository.GetAllCars();
     }
 }
