@@ -18,7 +18,7 @@ namespace ServiceHost.Controllers
         [HttpGet(Name = "GetIndex")]
         public List<CarCategory> Get()
         {
-            var list = _shopRepository.GetAllCategories().ToList();
+            var list = _shopRepository.GetAllCategories();
             return list;
         }
     }
