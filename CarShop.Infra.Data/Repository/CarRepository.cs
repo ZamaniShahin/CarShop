@@ -24,10 +24,10 @@ public class CarRepository(ShopContext context) : ICarRepository
         SaveChanges();
     }
 
-    public void DeleteCarCategory(long id)
+    public void DeleteCar(long id)
     {
-        var category = _context.CarCategories.FirstOrDefault(x => x.Id == id);
-        _context.CarCategories.Remove(category);
+        var car = _context.Cars.FirstOrDefault(x => x.CarId == id);
+        _context.Cars.Remove(car);
         SaveChanges();
     }
 
