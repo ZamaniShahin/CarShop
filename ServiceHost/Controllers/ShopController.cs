@@ -8,17 +8,17 @@ namespace ServiceHost.Controllers
     [Route("[controller]")]
     public class ShopController : ControllerBase
     {
-        private readonly IShopRepository _shopRepository;
+        private readonly ICarCategoryRepository _carCategoryRepository;
 
-        public ShopController(IShopRepository shopRepository)
+        public ShopController(ICarCategoryRepository carCategoryRepository)
         {
-            _shopRepository = shopRepository;
+            _carCategoryRepository = carCategoryRepository;
         }
 
         [HttpGet(Name = "GetIndex")]
         public List<CarCategory> Get()
         {
-            var list = _shopRepository.GetAllCategories();
+            var list = _carCategoryRepository.GetAllCategories();
             return list;
         }
     }

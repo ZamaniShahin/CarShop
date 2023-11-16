@@ -4,7 +4,7 @@ using CarShop.Infra.Data.Context;
 
 namespace CarShop.Infra.Data.Repository;
 
-public class ShopRepository(ShopContext context) : IShopRepository
+public class CarCategoryRepository(ShopContext context) : ICarCategoryRepository
 {
     private readonly ShopContext _context = context;
 

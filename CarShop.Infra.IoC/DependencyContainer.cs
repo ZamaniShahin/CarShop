@@ -17,7 +17,7 @@ namespace CarShop.Infra.IoC
             services.AddScoped<IShopService, ShopService>();
 
             //Infrastructure.Data Layer 
-            services.AddScoped<IShopRepository, ShopRepository>();
+            services.AddScoped<ICarCategoryRepository, CarCategoryRepository>();
 
             IConfiguration configuration = services.BuildServiceProvider().GetService<IConfiguration>();
             services.AddDbContext<ShopContext>(options =>

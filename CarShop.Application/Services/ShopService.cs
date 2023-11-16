@@ -6,35 +6,35 @@ namespace CarShop.Application.Services;
 
 public class ShopService:IShopService
 {
-    private readonly IShopRepository _shopRepository;
+    private readonly ICarCategoryRepository _carCategoryRepository;
 
-    public ShopService(IShopRepository shopRepository)
+    public ShopService(ICarCategoryRepository carCategoryRepository)
     {
-        _shopRepository = shopRepository;
+        _carCategoryRepository = carCategoryRepository;
     }
     //returns true, If Creating Category Be Succeeded
     public bool CreateCategory(CreateCarCategory command)
     {
-        return _shopRepository.CreateCategory(command);
+        return _carCategoryRepository.CreateCategory(command);
     }
 
     public bool EditCarCategory(EditCarCategory command)
     {
-        return _shopRepository.EditCarCategory(command);
+        return _carCategoryRepository.EditCarCategory(command);
     }
 
     public void DeleteCarCategory(long id)
     {
-        _shopRepository.DeleteCarCategory(id);
+        _carCategoryRepository.DeleteCarCategory(id);
     }
 
     public CarCategory GetCategory(long id)
     {
-        return _shopRepository.GetCategory(id);
+        return _carCategoryRepository.GetCategory(id);
     }
 
     public List<CarCategory> GetAllCategories()
     {
-        return _shopRepository.GetAllCategories();
+        return _carCategoryRepository.GetAllCategories();
     }
 }
