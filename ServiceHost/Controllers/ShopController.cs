@@ -28,10 +28,16 @@ namespace ServiceHost.Controllers
             return carCategories;
         }
         [HttpGet(Name = "GetCarsIndex")]
-        public List<Car> GetCars()
+        public List<CarDto> GetCars()
         {
-            var list = _carRepository.GetAllCars();
-            return list;
+            var cars = _carRepository.GetAllCars().Select(x => new CarDto
+            {
+                CarBrand = x.CarBrand,
+                CarColor = x.CarColor,
+                CarCreatedYear = x.CarCreatedYear,
+                CarName = x.CarName
+            }).ToList();
+            return cars;
         }
     }
 }
