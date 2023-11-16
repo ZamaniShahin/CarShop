@@ -2,7 +2,7 @@
 
 namespace CarShop.Application.Interfaces;
 
-public interface ICarRepositoryService
+public interface ICarService
 {
     public bool CreateCar(CreateCar command);
     public bool EditCar(EditCar command);
