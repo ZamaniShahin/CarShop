@@ -8,5 +8,5 @@ public interface ICarRepository
     public void EditCar(EditCar command);
     public void DeleteCar(long id);
     public Car GetCar(long id);
-    public List<CarCategory> GetAllCars();
+    public List<Car> GetAllCars();
 }
