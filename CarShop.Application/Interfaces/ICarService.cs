@@ -5,8 +5,8 @@ namespace CarShop.Application.Interfaces;
 public interface ICarService
 {
     public bool CreateCar(CreateCar command);
-    public bool EditCar(EditCar command);
+    public void EditCar(EditCar command);
     public void DeleteCar(long id);
-    public CarCategory GetCar(long id);
-    public List<CarCategory> GetAllCars();
+    public Car GetCar(long id);
+    public List<Car> GetAllCars();
 }

@@ -18,9 +18,9 @@ public class CarService:ICarService
        return _carRepository.CreateCar(command);
     }
 
-    public bool EditCar(EditCar command)
+    public void EditCar(EditCar command)
     {
-        return _carRepository.EditCar(command);
+        _carRepository.EditCar(command);
     }
 
     public void DeleteCar(long id)
@@ -28,12 +28,12 @@ public class CarService:ICarService
         _carRepository.DeleteCar(id);
     }
 
-    public CarCategory GetCar(long id)
+    public Car GetCar(long id)
     {
         return _carRepository.GetCar(id);
     }
 
-    public List<CarCategory> GetAllCars()
+    public List<Car> GetAllCars()
     {
         return _carRepository.GetAllCars();
     }
