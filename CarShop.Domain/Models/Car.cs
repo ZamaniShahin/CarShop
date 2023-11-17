@@ -8,6 +8,7 @@
         public string CarCreatedYear { get; set; } = carCreatedYear;
         public string CarColor { get; set; } = carColor;
         public string DateCarCreatedBanner { get; set; } = DateTime.Now.ToString();
+        public CarCategory Category { get; set; }
 
         public void Edit(string carName,string carBrand,string carCreatedYear,string carColor)
         {
