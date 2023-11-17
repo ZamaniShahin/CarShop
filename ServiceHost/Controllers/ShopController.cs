@@ -27,7 +27,7 @@ namespace ServiceHost.Controllers
             }).ToList();
             return carCategories;
         }
-        [HttpGet(Name = "GetCarsIndex")]
+        [HttpGet(Name = "Cars")]
         public List<CarDto> GetCars()
         {
             var categoryName = _carCategoryRepository;
@@ -56,11 +56,18 @@ namespace ServiceHost.Controllers
             return result;
         }
 
-        [HttpGet(Name = "GetCreateCar")]
+        [HttpPost(Name = "CreateCar")]
         public StatusCodeResult GetCreateCar(CreateCar command)
         {
-            var car = _carRepository.CreateCar(command);
+            _carRepository.CreateCar(command);
             return Ok();
         }
+        [HttpPost(Name = "EditCar")]
+        public StatusCodeResult GetEditCar(EditCar command)
+        {
+            _carRepository.EditCar(command);
+            return Ok();
+        }
+
     }
 }
