@@ -15,6 +15,10 @@ namespace CarShop.Infra.Data.Context.Configurations.CarConfigurations
             builder.Property(x => x.CarColor).HasMaxLength(50).IsRequired();
             builder.Property(x => x.CarCreatedYear).HasMaxLength(250).IsRequired();
             builder.Property(x => x.DateCarCreatedBanner).HasMaxLength(250).IsRequired();
+
+            builder.HasOne(x => x.Category)
+                .WithMany(x => x.Cars)
+                .HasForeignKey(x => x.CarId);
         }
     }
 }

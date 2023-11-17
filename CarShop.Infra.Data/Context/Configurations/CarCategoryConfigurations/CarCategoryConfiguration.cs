@@ -15,7 +15,7 @@ public class CarCategoryConfiguration:IEntityTypeConfiguration<CarCategory>
         builder.Property(x => x.DateCreated).HasMaxLength(300);
 
         builder.HasMany(x => x.Cars)
-            .WithOne(z => z.)
-            .HasForeignKey(x => x.CategoryId);
+            .WithOne(x => x.Category)
+            .HasForeignKey(x => x.CarId);
     }
 }
